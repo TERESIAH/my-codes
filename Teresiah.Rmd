@@ -1,0 +1,72 @@
+---
+title: "Tess"
+output:
+  html_document:
+    number section: yes
+    toc: yes
+    toc_depth: 3
+
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+basedir <- "D:/Dalberg Research/Rsa Practice"
+knitr::opts_chunk$set(root.dir=basedir)
+```
+
+## R Markdown
+
+#Our first section
+
+Today we are learning about markdown. See example above
+```{r}
+dorcas <- c("Tired","Sleepy","Home")
+for(i in 1:length(dorcas)){
+  cat("This is true definition of being exhausted",dorcas[i],"\n")
+}
+```
+
+
+##Second section
+###Third section
+
+#Section Another
+
+Our next chunk is importing data form the base directory.
+```{r}
+dat <-  read.csv("Dpdata.csv")
+dat
+```
+
+
+###Simple Analysis
+```{r}
+tab1 <- table(dat$Weight)
+tab1
+tab1 <- data.frame(tab1)
+tab1
+names(tab1) <- c("labels","frequencies")
+names(tab1)
+```
+
+
+
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
